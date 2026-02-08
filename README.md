@@ -16,4 +16,8 @@ MLX kernels are optimized low-level tensor operations used by Apple’s MLX fram
 
 ## Troubleshooting
 chmod +x $(python -c "import torch, pathlib; print(pathlib.Path(torch.__file__).parent/'bin'/'torch_shm_manager')")
+
 xattr -dr com.apple.quarantine $(python -c "import torch, pathlib; print(pathlib.Path(torch.__file__).parent/'bin'/'torch_shm_manager')")
+
+## Run
+python -m macfold.cli fold --fasta examples/tiny.fasta --out results/run_name
