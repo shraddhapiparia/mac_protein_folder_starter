@@ -28,3 +28,8 @@ In protein folding models, MLX kernels support performance-critical operations s
 chmod +x $(python -c "import torch, pathlib; print(pathlib.Path(torch.__file__).parent/'bin'/'torch_shm_manager')")
 xattr -dr com.apple.quarantine $(python -c "import torch, pathlib; print(pathlib.Path(torch.__file__).parent/'bin'/'torch_shm_manager')")
 ```
+
+## Acknowledgments
+
+This project builds on tooling from Latent Spacecraft, particularly their work on macOS-native ML workflows.
+Their blog and open-source packages were helpful references while setting up and validating this experiment.
