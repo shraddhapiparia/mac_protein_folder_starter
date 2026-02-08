@@ -31,5 +31,5 @@ xattr -dr com.apple.quarantine $(python -c "import torch, pathlib; print(pathlib
 
 ## Acknowledgments
 
-This project builds on tooling from Latent Spacecraft, particularly their work on macOS-native ML workflows.
+This project builds on tooling from [Latent Spacecraft](https://latentspacecraft.com), particularly their work on macOS-native ML workflows.
 Their blog and open-source packages were helpful references while setting up and validating this experiment.
