@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+.env
+
+# macOS
+.DS_Store
+
+# Outputs / large artifacts
+results/
+outputs/
+*.pdb
+*.cif
+*.npz
+*.npy
+*.pt
+*.ckpt
+*.h5
+
+# Upstream clone + weights 
+openfold-3-mlx/
+weights/
+models/
