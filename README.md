@@ -1,30 +1,30 @@
 # Mac Protein Folding Starter (MLX)
 
-A **Mac-native, reproducible protein folding inference pipeline** built on top of OpenFold3-MLX, designed to make large protein folding models usable on **Apple Silicon** without CUDA. This project focuses on **engineering, reproducibility, and evaluation**, not model training.
+A **Mac-native protein folding inference setup** built on top of OpenFold3-MLX, aimed at making large protein folding models runnable on **Apple Silicon** without CUDA. This project focuses on **engineering setup, reproducibility, and system-level evaluation**, not model training.
 
-## This project has
+## This project includes
 
-- A clean **CLI wrapper** around OpenFold3-MLX
+- A lightweight **CLI wrapper** around OpenFold3-MLX
 - One-command setup and inference on Apple Silicon
-- Simple benchmarking for sequence length vs runtime
+- Basic benchmarking of sequence length versus runtime
 
-State-of-the-art protein folding models are typically locked behind CUDA, Linux-only environments. This project demonstrates how modern protein folding models can run locally on macOS and packaged into a usable tool and can be further evaluated for reproducibly.
+State-of-the-art protein folding models are typically developed and optimized for CUDA-based Linux environments. This repository documents a practical path to running such models locally on macOS for experimentation, inspection of outputs, and understanding system constraints.
 
 ## What are MLX kernels?
 
-MLX kernels are optimized low-level tensor operations used by Apple’s MLX framework to execute machine-learning workloads efficiently on Apple Silicon. They replace CUDA kernels on macOS by targeting Metal and unified memory, allowing large models to run without explicit CPU <--> GPU data transfers. In protein folding models, MLX kernels power performance-critical operations such as attention, tensor contractions, and normalization.
+MLX kernels are optimized low-level tensor operations provided by Apple’s MLX framework to execute machine learning workloads efficiently on Apple Silicon. They serve a role analogous to CUDA kernels on NVIDIA GPUs, targeting Metal and unified memory.
+
+In protein folding models, MLX kernels support performance-critical operations such as attention, tensor contractions, and normalization, enabling inference without explicit CPU–GPU data transfers.
 
 ## Hardware notes
 
 - OpenFold is primarily optimized for CUDA-enabled GPUs.
-- This repo documents a local Apple Silicon (MPS) run for learning and experimentation.
-- MPS runs are suitable for small proteins and exploration, but may be slower and more memory-limited than CUDA.
-
+- This repository documents a local Apple Silicon run using the MPS backend for learning and experimentation.
+- MPS runs are suitable for small proteins and exploratory analysis, but may be slower and more memory-limited than CUDA-based setups.
 
 ## Troubleshooting
+
+```bash
 chmod +x $(python -c "import torch, pathlib; print(pathlib.Path(torch.__file__).parent/'bin'/'torch_shm_manager')")
-
 xattr -dr com.apple.quarantine $(python -c "import torch, pathlib; print(pathlib.Path(torch.__file__).parent/'bin'/'torch_shm_manager')")
-
-## Run
-python -m macfold.cli fold --fasta examples/tiny.fasta --out results/run_name
+```
