@@ -1,0 +1,14 @@
+{
+    "seeds": [42],
+    "queries": {
+        "query_1770515461": {
+            "chains": [
+                {
+                    "molecule_type": "protein",
+                    "chain_ids": ["A"],
+                    "sequence": "MKTAYIAKQRQISFVKSHFSRQLEERLGLIEVQANLKS"
+                }
+            ]
+        }
+    }
+}
