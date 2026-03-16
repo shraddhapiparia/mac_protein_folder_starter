@@ -112,18 +112,22 @@ conda activate macfold
 ```
 
 Install core dependencies:
-```bash conda install -c conda-forge git pip jupyterlab matplotlib pandas pyyaml -y
+```bash 
+conda install -c conda-forge git pip jupyterlab matplotlib pandas pyyaml -y
 ```
 
 Install MLX tools:
-```bash pip install mlx mlx-lm
+```bash 
+pip install mlx mlx-lm
 ```
 
 Export the environment for reproducibility:
-```bash conda env export > environment.yml ```
+```bash 
+conda env export > environment.yml
+```
 
 Project structure:
-
+```bash
 mac_protein_folder_starter/
 
 ├── examples/            # example sequences or JSON inputs
@@ -160,6 +164,7 @@ Example input:
     }
   }
 }
+```
 --- 
 
 # Running a Prediction
