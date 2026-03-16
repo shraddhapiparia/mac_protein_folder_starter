@@ -108,13 +108,16 @@ Create a conda environment:
 
 ```bash
 conda create -n macfold python=3.11 -y
-conda activate macfold ```
+conda activate macfold
+```
 
 Install core dependencies:
-```bash conda install -c conda-forge git pip jupyterlab matplotlib pandas pyyaml -y ```
+```bash conda install -c conda-forge git pip jupyterlab matplotlib pandas pyyaml -y
+```
 
 Install MLX tools:
-```bash pip install mlx mlx-lm ```
+```bash pip install mlx mlx-lm
+```
 
 Export the environment for reproducibility:
 ```bash conda env export > environment.yml ```
