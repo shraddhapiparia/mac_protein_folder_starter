@@ -23,6 +23,5 @@ outputs/
 *.h5
 
 # Upstream clone + weights 
-openfold-3-mlx/
 weights/
 models/
